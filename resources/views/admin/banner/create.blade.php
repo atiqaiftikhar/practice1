@@ -3,7 +3,7 @@
 <br><br><br>
 <div class="container">
     <form action="{{ $banner->id !=null ? route('banner.update',['id'=>$banner->id]): route('banner.store') }}" method="post" enctype="multipart/form-data">
-   
+
         @csrf
         <div class="mb-3">
             <label for="image" class="form-label">Image</label>
