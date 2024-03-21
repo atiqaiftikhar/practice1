@@ -64,11 +64,11 @@ class BannerController extends Controller
         ->with('success', 'Banner created successfully.');
 
     }
-
-    public function edit($id)
+    public function edit(Request $request,$id)
     {
+        
         $banner = Banner::find($id);
-        return view('banner.edit',compact('banner'));
+        return view('admin.banner.create',compact('banner'));
     }
 
 
@@ -85,11 +85,11 @@ class BannerController extends Controller
 
     public function delete($id)
     {
-        $banner = Banner::findOrFail($id);
-        $banner->delete();
+       
+    $banner=Banner::find($id);
+    $banner->delete();
+    return redirect()->route('banner.index');
 
-        return redirect()->route('users.index')
-            ->with('success', 'User deleted successfully.');
     }
 
 }
