@@ -1,7 +1,7 @@
 @extends('layouts.masterfront')
 @section('content')
-
-
+<br><br><br>
+<div class="container">
 <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
 
@@ -35,4 +35,6 @@
       <span class="carousel-control-next-icon"></span>
     </button>
   </div>
+
+</div>
 @endsection

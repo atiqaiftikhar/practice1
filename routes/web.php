@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\FirstController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -8,19 +9,21 @@ use Illuminate\Support\Facades\Route;
 //     return view('home1');
 // });
 Route::get('/',[HomeController::class,'home']);
-Route::get('/admin',[FirstController::class,'index']);
+// Route::get('/admin',[FirstController::class,'admin']);
 
-//   Route::group(['prefix'=>'admin'], function(){
+Route::get('/admin',[HomeController::class,'admin']);
 
-//     Route::group(['prefix'=>'/first'], function(){
+  Route::group(['prefix'=>'admin'], function(){
 
-//         Route::get('/',[FirstController::class,'index'])->name('booking.index');
-//         Route::get('/create',[FirstController::class,'create'])->name('booking.create');
-//         Route::post('/store',[FirstController::class,'store'])->name('booking.store');
-//         Route::get('/edit/{id}', [FirstController::class,'edit'])->name('booking.edit');
-//         Route::post('/update/{id}', [FirstController::class,'update'])->name('booking.update');
-//         Route::get('/delete/{id}', [FirstController::class,'delete'])->name('booking.delete');
+    Route::group(['prefix'=>'/banner'], function(){
+
+        Route::get('/',[BannerController::class,'index'])->name('banner.index');
+        Route::get('/create',[BannerController::class,'create'])->name('banner.create');
+        Route::post('/store',[BannerController::class,'store'])->name('banner.store');
+        Route::get('/edit/{id}', [BannerController::class,'edit'])->name('banner.edit');
+        Route::post('/update/{id}', [BannerController::class,'update'])->name('banner.update');
+        Route::get('/delete/{id}', [BannerController::class,'delete'])->name('banner.delete');
     
-//    });
+   });
 
-// });
+});
