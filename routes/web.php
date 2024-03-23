@@ -9,6 +9,14 @@ use Illuminate\Support\Facades\Route;
 //     return view('home1');
 // });
 Route::get('/',[HomeController::class,'home']);
+Route::get('/img1',[HomeController::class,'img1']);
+
+Route::get('/img2',[HomeController::class,'img2']);
+
+Route::get('/img3',[HomeController::class,'img3']);
+
+Route::get('/img4',[HomeController::class,'img4']);
+
 // Route::get('/admin',[FirstController::class,'admin']);
 
 Route::get('/admin',[HomeController::class,'admin']);
