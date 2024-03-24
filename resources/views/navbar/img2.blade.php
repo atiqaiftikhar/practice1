@@ -42,7 +42,7 @@
   background-position: center;
   height: 100%;
   width: 100%;
-  padding-top: 60px; 
+  padding-top: 60px;
 
 }
 .jumbotron {
@@ -89,35 +89,35 @@
 
 
 .smartphone .content {
-  width: 100%; 
+  width: 100%;
   max-width: 360px;
-  height: auto; 
+  height: auto;
   background: white;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .header-img {
       background-image: url('{{ asset('assetsfront/img/header1.jpg') }}'); /* Replace 'your-image-url.jpg' with your actual image URL */
       background-size: cover;
       background-position: center;
-      height: 200px; 
+      height: 200px;
     }
     .search-bar {
-  width: 20%; 
-  height: 6px; 
+  width: 20%;
+  height: 6px;
   /* margin: 8px auto;  */
-  padding: 5px; 
-  font-size: 10px; 
+  padding: 5px;
+  font-size: 10px;
   border: 1px solid #ccc; /* Add a border */
   border-radius: 3px; /* Add border radius */
-  margin-top: 4px; 
+  margin-top: 4px;
 }
 
 .dynamic-heading {
   font-size: 10px;
   color: #ffffff;
   margin-top: 2px;
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
 }
 
 .social-icons {
@@ -206,28 +206,28 @@
 
         <div class="smartphone">
           <div class="content">
-            
+
               <div class="header-img">
                   <div class="container">
                     <div class="row justify-content-center align-items-center ">
                       <div class="col-sm-2 mt-3 d-flex justify-content-center justify-content-bottom">
                         <div class="social-icons">
-                       
+
                           <i class="fa fa-barcode" aria-hidden="true"></i>
-      
+
                       </div></div>
                       <div class="col-sm-8  d-flex justify-content-center">
                         <form class="form-inline mt-3">
                           <input class="form-control mr-sm-1" class="search-bar" type="text" placeholder="Search Products..." aria-label="Search">
                           {{-- <button class="search-button" type="submit">Search</button> --}}
-                        </form>    
+                        </form>
                       </div>
                <div class="col-sm-2 mt-3 d-flex justify-content-center justify-content-bottom">
                 <div class="social-icons">
              <a href="#" class="message-icon"><i class="fa fa-envelope" aria-hidden="true"></i></a>
         </div>
       </div>
-      
+
                   {{-- </div>
                 </div> --}}
                 <br>
@@ -245,11 +245,19 @@
                 <p>{{$content->description}} </p>
               </div>
               <div class="social-icons">
-                <a href="{{ $content->facebook }}" class="fa fa-facebook"></a>
-                <a href="{{ $content->twitter }}" class="fa fa-twitter"></a>
-                <a href="{{ $content->instagram }}" class="fa fa-instagram"></a>
-                <a href="{{ $content->youtube }}" class="fa fa-youtube"></a>
-              </div>
+                @if($content->facebook)
+                    <a href="{{ $content->facebook }}" class="fa fa-facebook"></a>
+                @endif
+                @if($content->twitter)
+                    <a href="{{ $content->twitter }}" class="fa fa-twitter"></a>
+                @endif
+                @if($content->instagram)
+                    <a href="{{ $content->instagram }}" class="fa fa-instagram"></a>
+                @endif
+                @if($content->youtube)
+                    <a href="{{ $content->youtube }}" class="fa fa-youtube"></a>
+                @endif
+            </div>
           </div>
           <div class="col-sm-2 d-flex justify-content-center">
             <div class="social-icons">
