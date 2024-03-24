@@ -17,7 +17,7 @@
         </div>
         <div class="form-group">
             <label for="phone_no">Phone Number:</label>
-            <input type="tel" class="form-control" id="phone_no" name="phone_no" value="{{ $content->phone_no ?? old('phone_no') }}" required>
+            <input type="tel" class="form-control" id="phone_no" name="phone_no" value="{{ $content->phone_no ?? old('phone_no') }}" >
         </div>
         <div class="form-group">
             <label for="facebook">Facebook</label>
