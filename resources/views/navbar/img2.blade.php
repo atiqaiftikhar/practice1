@@ -272,6 +272,7 @@
     <div class="social-icons">
         <a href="tel:{{ $content->phone_no }}" class="fa fa-phone fa-2x"></a>
     </div>
+    
 @endif
           </div>
           </div>
