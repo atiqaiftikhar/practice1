@@ -101,16 +101,15 @@
       background-position: center;
       height: 200px;
     }
-    .search-bar {
+    /* .search-bar {
   width: 20%;
   height: 6px;
-  /* margin: 8px auto;  */
   padding: 5px;
   font-size: 10px;
-  border: 1px solid #ccc; /* Add a border */
-  border-radius: 3px; /* Add border radius */
+  border: 1px solid #ccc; 
+  border-radius: 3px; 
   margin-top: 4px;
-}
+} */
 
 .dynamic-heading {
   font-size: 10px;
@@ -176,7 +175,7 @@
 .fa-barcode {
   background:transparent;
   color: white;
-  font-size: 32px;
+  font-size: 30px;
   border-radius: 50%;
   padding: 10px;
 
@@ -184,7 +183,15 @@
 .fa-envelope {
   background:transparent;
   color: white;
-  font-size: 30px;
+  font-size: 28px;
+  border-radius: 50%;
+  padding: 10px;
+
+}
+.fa-phone {
+  background:transparent;
+  color: white;
+  font-size: 38px;
   border-radius: 50%;
   padding: 10px;
 
@@ -209,20 +216,20 @@
               <div class="header-img">
                   <div class="container">
                     <div class="row justify-content-center align-items-center">
-                      <div class="col-sm-2 d-flex justify-content-center">
+                      <div class="col-2 d-flex justify-content-center">
                   
                         <div class="social-icons">
 
                           <i class="fa fa-barcode" aria-hidden="true"></i>
 
                       </div></div>
-                      <div class="col-sm-8 mt-2">
-                        <form class="form-inline mt-3">
-                          <input class="form-control mr-sm-1" class="search-bar" type="text" placeholder="Search Products..." aria-label="Search">
-                          {{-- <button class="search-button" type="submit">Search</button> --}}
+                      <div class="col-8 mt-2">
+                        <form action="/action_page.php">
+                          <input type="text" class="rounded" placeholder="Search.." name="search">
+                          {{-- <button type="submit"><i class="fa fa-search"></i></button> --}}
                         </form>
                       </div>
-                      <div class="col-sm-2 d-flex justify-content-center">
+                      <div class="col-2 d-flex justify-content-center">
                 <div class="social-icons">
              <a href="#" class="message-icon"><i class="fa fa-envelope" aria-hidden="true"></i></a>
         </div>
@@ -232,14 +239,14 @@
                 </div> --}}
                 <br>
                 <div class="row justify-content-center align-items-center">
-                  <div class="col-sm-2 d-flex justify-content-center">
+                  <div class="col-2 d-flex justify-content-center">
               
           <img class="rounded" src="{{asset($content->product_img)}}" height="60" width="60">
           <br>
 
             </div>
 
-             <div class="col-sm-8 mt-2">
+             <div class="col-8 mt-2">
             <div class="dynamic-heading">
                 {{-- <h5>Dolphin Supplier</h5> --}}
                 <h5>{{$content->heading}}</h5>
@@ -260,9 +267,9 @@
                 @endif
             </div>
           </div>
-          <div class="col-sm-2 d-flex justify-content-center">
+          <div class="col-2 d-flex justify-content-center">
             <div class="social-icons">
-              <a href="tel:03002345786" class="fa fa-phone"></a>
+              <a href="tel:03002345786" class="fa fa-phone fa-2x"></a>
             </div>
           </div>
           </div>
