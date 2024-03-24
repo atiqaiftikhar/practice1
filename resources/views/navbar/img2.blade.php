@@ -42,7 +42,7 @@
   background-position: center;
   height: 100%;
   width: 100%;
-  padding-top: 60px;
+  padding-top: 60px; 
 
 }
 .jumbotron {
@@ -89,35 +89,35 @@
 
 
 .smartphone .content {
-  width: 100%;
+  width: 100%; 
   max-width: 360px;
-  height: auto;
+  height: auto; 
   background: white;
-  overflow: hidden;
+  overflow: hidden; 
 }
 
 .header-img {
       background-image: url('{{ asset('assetsfront/img/header1.jpg') }}'); /* Replace 'your-image-url.jpg' with your actual image URL */
       background-size: cover;
       background-position: center;
-      height: 200px;
+      height: 200px; 
     }
     .search-bar {
-  width: 20%;
-  height: 8px;
+  width: 20%; 
+  height: 6px; 
   /* margin: 8px auto;  */
-  padding: 3px;
-  font-size: 12px;
+  padding: 5px; 
+  font-size: 10px; 
   border: 1px solid #ccc; /* Add a border */
   border-radius: 3px; /* Add border radius */
-  margin-top: 5px;
+  margin-top: 4px; 
 }
 
 .dynamic-heading {
   font-size: 10px;
   color: #ffffff;
   margin-top: 2px;
-  margin-bottom: 5px;
+  margin-bottom: 5px; 
 }
 
 .social-icons {
@@ -177,10 +177,17 @@
 .fa-barcode {
   background:transparent;
   color: white;
- height: 50;
- width: 70;
+  font-size: 32px;
   border-radius: 50%;
-  padding: 6px;
+  padding: 10px;
+
+}
+.fa-envelope {
+  background:transparent;
+  color: white;
+  font-size: 30px;
+  border-radius: 50%;
+  padding: 10px;
 
 }
 
@@ -189,43 +196,49 @@
 
 </style>
 
+
+
       <body>
 
         {{-- @foreach ($content as $content) --}}
         @if ($content)
 
-<div class="smartphone">
-    <div class="content">
 
-        <div class="header-img">
-            <div class="container">
-              <div class="row justify-content-center align-items-center">
-                <div class="col-sm-2">
-                  <div class="social-icons">
-
-                    <i class="fa fa-barcode" aria-hidden="true"></i>
-
-                </div></div>
-                <div class="col-sm-8">
-                  <form class="form-inline mt-3">
-                    <input class="form-control mr-sm-1" class="search-bar" type="text" placeholder="Search Products..." aria-label="Search">
-                    {{-- <button class="search-button" type="submit">Search</button> --}}
-                  </form>
-                </div>
-                <div class="col-sm-2">
-                </div>
-              </div>
-            {{-- </div>
-          </div> --}}
-          <br>
-          <div class="row justify-content-center align-items-center">
-            <div class="col-sm-3 d-flex justify-content-center">
+        <div class="smartphone">
+          <div class="content">
+            
+              <div class="header-img">
+                  <div class="container">
+                    <div class="row justify-content-center align-items-center ">
+                      <div class="col-sm-2 mt-3 d-flex justify-content-center justify-content-bottom">
+                        <div class="social-icons">
+                       
+                          <i class="fa fa-barcode" aria-hidden="true"></i>
+      
+                      </div></div>
+                      <div class="col-sm-8  d-flex justify-content-center">
+                        <form class="form-inline mt-3">
+                          <input class="form-control mr-sm-1" class="search-bar" type="text" placeholder="Search Products..." aria-label="Search">
+                          {{-- <button class="search-button" type="submit">Search</button> --}}
+                        </form>    
+                      </div>
+               <div class="col-sm-2 mt-3 d-flex justify-content-center justify-content-bottom">
+                <div class="social-icons">
+             <a href="#" class="message-icon"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      
+                  {{-- </div>
+                </div> --}}
+                <br>
+                <div class="row justify-content-center align-items-center">
+                  <div class="col-sm-2 d-flex justify-content-center">
           <img class="rounded" src="{{asset($content->product_img)}}" height="60" width="60">
           <br>
 
             </div>
 
-            <div class="col-sm-7">
+             <div class="col-sm-8 mt-2">
             <div class="dynamic-heading">
                 {{-- <h5>Dolphin Supplier</h5> --}}
                 <h5>{{$content->heading}}</h5>
@@ -253,36 +266,6 @@
 @endif
 <br>
 
-          <div id="demo" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-              <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-              <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-              <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
-            </div>
-
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="{{asset('assetsfront/img/s1.png')}}" alt="" class="d-block w-100">
-              </div>
-              <div class="carousel-item">
-                <img src="{{asset('assetsfront/img/s2.png')}}" alt="" class="d-block w-100">
-              </div>
-              <div class="carousel-item">
-                <img src="{{asset('assetsfront/img/s3.png')}}" alt="" class="d-block w-100">
-              </div>
-              <div class="carousel-item">
-                <img src="{{asset('assetsfront/img/s4.png')}}" alt="" class="d-block w-100">
-              </div>
-            </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </button>
-          </div>
 
 
     </div>
