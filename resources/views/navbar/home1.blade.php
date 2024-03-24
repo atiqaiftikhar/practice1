@@ -2,6 +2,7 @@
 @section('content')
 <br><br><br>
 <div class="container">
+  
 <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
 

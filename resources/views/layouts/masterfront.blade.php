@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Practice</title>
@@ -53,6 +53,105 @@
   height: 100%;
   width: 100%;
 }
+body {
+      padding-top: 60px; /* To adjust for fixed navbar */
+    }
+    .jumbotron {
+      margin-top: 20px;
+    }
+
+
+
+
+    .smartphone {
+  position: relative;
+  width: 360px;
+  height: 640px;
+  margin: auto;
+  border: 16px black solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.smartphone:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.smartphone:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+
+.smartphone .content {
+  width: 100%; 
+  max-width: 360px;
+  height: auto; 
+  background: white;
+  overflow: hidden; 
+}
+
+.header-img {
+      background-image: url('{{ asset('assetsfront/img/header1.jpg') }}'); /* Replace 'your-image-url.jpg' with your actual image URL */
+      background-size: cover;
+      background-position: center;
+      height: 180px; 
+    }
+    .search-bar {
+  width: 30%; /* Adjust the width as needed */
+  height: 10px; /* Adjust the height as needed */
+  margin: 10px auto; /* Center the search bar */
+  padding: 5px; /* Add padding for better appearance */
+  font-size: 16px; /* Adjust font size */
+  border: 1px solid #ccc; /* Add a border */
+  border-radius: 5px; /* Add border radius */
+}
+
+.dynamic-heading {
+  font-size: 10px;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+/* Style for social media icons */
+.social-icons {
+  margin-top: 5px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #ffffff;
+  font-size: 30px;
+}
+
+/* Additional styles for individual social media icons (you can customize as needed) */
+.social-icons a:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+
+
 
 </style>
 
