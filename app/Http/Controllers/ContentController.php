@@ -23,28 +23,41 @@ class ContentController extends Controller
 
     public function store(Request $request)
     {
+        // Validate the request data
+        $request->validate([
+            'product_img' => 'required|image', // Validate image file
+            'heading' => 'required|string',
+            'description' => 'required|string',
+            'facebook' => 'nullable|url',
+            'instagram' => 'nullable|url',
+            'twitter' => 'nullable|url',
+            'youtube' => 'nullable|url',
+            'products' => 'nullable|string',
+        ]);
 
+        // Process image upload if present
+        if ($image = $request->file('product_img')) {
+            $destination = 'public/assetsfront/img/';
+            $image_name = time() . '_image.' . $image->getClientOriginalExtension();
+            $image->move(public_path($destination), $image_name);
+            $data['product_img'] = '/' . $destination . $image_name;
+        }
 
-    if ($image = $request->file('product_img')) {
-        $destination = 'public/assetsfront/img/';
-        $image_name = time() . '_image.' . $image->getClientOriginalExtension();
-        $image->move(public_path($destination), $image_name);
-        $data['product_img'] = '/' . $destination . $image_name;
-    }
-    $data['heading'] = $request->input('heading');
-    $data['description'] = $request->input('description');
-    $data['facebook'] = $request->input('facebook');
-    $data['instagram'] = $request->input('instagram');
-    $data['twitter'] = $request->input('twitter');
-    $data['youtube'] = $request->input('youtube');
-    $data['products'] = $request->input('products');
+        // Create content data array
+        $data['heading'] = $request->input('heading');
+        $data['description'] = $request->input('description');
+        $data['facebook'] = $request->input('facebook');
+        $data['instagram'] = $request->input('instagram');
+        $data['twitter'] = $request->input('twitter');
+        $data['youtube'] = $request->input('youtube');
+        $data['products'] = $request->input('products');
 
+        // Create a new Content model instance and save it
+        Content::create($data);
 
-    Content::create($data);
-
-    return redirect()->route('content.index')
-        ->with('success', 'content created successfully.');
-
+        // Redirect back to the index page with success message
+        return redirect()->route('content.index')
+            ->with('success', 'Content created successfully.');
     }
     public function edit(Request $request,$id)
     {
