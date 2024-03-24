@@ -22,7 +22,7 @@
         <script src="path/to/bootstrap.min.js"></script> --}}
 
 
-
+       
       </head>
       <br><br>
       <style>
@@ -106,8 +106,8 @@
   height: 6px;
   padding: 5px;
   font-size: 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border: 1px solid #ccc; 
+  border-radius: 3px; 
   margin-top: 4px;
 } */
 
@@ -216,13 +216,8 @@
               <div class="header-img">
                   <div class="container">
                     <div class="row justify-content-center align-items-center">
-<<<<<<< HEAD
-                      <div class="col-2 d-flex justify-content-center">
-
-=======
                       <div class="col-2 mt-2 d-flex justify-content-center">
                   
->>>>>>> 86b91e844ab0cbafa4e5b49bbc3a64346e9ed052
                         <div class="social-icons">
 
                           <i class="fa fa-barcode" aria-hidden="true"></i>
@@ -245,7 +240,7 @@
                 <br>
                 <div class="row justify-content-center align-items-center">
                   <div class="col-2 d-flex justify-content-center">
-
+              
           <img class="rounded" src="{{asset($content->product_img)}}" height="60" width="60">
           <br>
 
@@ -277,7 +272,6 @@
     <div class="social-icons">
         <a href="tel:{{ $content->phone_no }}" class="fa fa-phone fa-2x"></a>
     </div>
-    
 @endif
           </div>
           </div>
