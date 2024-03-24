@@ -3,10 +3,10 @@
     <head>
         <title>Mobile Skin</title>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{ asset('assetsfront/bootstrap/css/bootstrap.min.css') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {{-- <link rel="stylesheet" href="{{ asset('assetsfront/bootstrap/css/bootstrap.min.css') }}">
 	     <link rel="stylesheet" href="{{asset('assetsfront/bootstrap/css/font-awesome.min.css')}}">
-	     <script src="{{asset('assetsfront/bootstrap/js/bootstrap.bundle.min.js')}}" type="text/javascript" charset="utf-8" async defer></script>
+	     <script src="{{asset('assetsfront/bootstrap/js/bootstrap.bundle.min.js')}}" type="text/javascript" charset="utf-8" async defer></script> --}}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,15 +15,14 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
         <link href="path/to/bootstrap.min.css" rel="stylesheet">
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="path/to/jquery.min.js"></script>
+        {{-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> --}}
+        {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
+        {{-- <script src="path/to/jquery.min.js"></script>
         <script src="path/to/popper.min.js"></script>
-        <script src="path/to/bootstrap.min.js"></script>
+        <script src="path/to/bootstrap.min.js"></script> --}}
 
 
-
+       
       </head>
       <br><br>
       <style>
@@ -209,20 +208,21 @@
             
               <div class="header-img">
                   <div class="container">
-                    <div class="row justify-content-center align-items-center ">
-                      <div class="col-sm-2 mt-3 d-flex justify-content-center justify-content-bottom">
+                    <div class="row justify-content-center align-items-center">
+                      <div class="col-sm-2 d-flex justify-content-center">
+                  
                         <div class="social-icons">
                        
                           <i class="fa fa-barcode" aria-hidden="true"></i>
       
                       </div></div>
-                      <div class="col-sm-8  d-flex justify-content-center">
+                      <div class="col-sm-8 mt-2">
                         <form class="form-inline mt-3">
                           <input class="form-control mr-sm-1" class="search-bar" type="text" placeholder="Search Products..." aria-label="Search">
                           {{-- <button class="search-button" type="submit">Search</button> --}}
                         </form>    
                       </div>
-               <div class="col-sm-2 mt-3 d-flex justify-content-center justify-content-bottom">
+                      <div class="col-sm-2 d-flex justify-content-center">
                 <div class="social-icons">
              <a href="#" class="message-icon"><i class="fa fa-envelope" aria-hidden="true"></i></a>
         </div>
@@ -233,6 +233,7 @@
                 <br>
                 <div class="row justify-content-center align-items-center">
                   <div class="col-sm-2 d-flex justify-content-center">
+              
           <img class="rounded" src="{{asset($content->product_img)}}" height="60" width="60">
           <br>
 
@@ -245,15 +246,23 @@
                 <p>{{$content->description}} </p>
               </div>
               <div class="social-icons">
-                <a href="{{ $content->facebook }}" class="fa fa-facebook"></a>
-                <a href="{{ $content->twitter }}" class="fa fa-twitter"></a>
-                <a href="{{ $content->instagram }}" class="fa fa-instagram"></a>
-                <a href="{{ $content->youtube }}" class="fa fa-youtube"></a>
-              </div>
+                @if($content->facebook)
+                    <a href="{{ $content->facebook }}" class="fa fa-facebook"></a>
+                @endif
+                @if($content->twitter)
+                    <a href="{{ $content->twitter }}" class="fa fa-twitter"></a>
+                @endif
+                @if($content->instagram)
+                    <a href="{{ $content->instagram }}" class="fa fa-instagram"></a>
+                @endif
+                @if($content->youtube)
+                    <a href="{{ $content->youtube }}" class="fa fa-youtube"></a>
+                @endif
+            </div>
           </div>
           <div class="col-sm-2 d-flex justify-content-center">
             <div class="social-icons">
-              <a href="tel:+1234567890" class="fa fa-phone"></a>
+              <a href="tel:03002345786" class="fa fa-phone"></a>
             </div>
           </div>
           </div>
