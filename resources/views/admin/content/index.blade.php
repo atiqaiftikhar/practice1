@@ -21,6 +21,7 @@
             <th>Twitter</th>
             <th>Product Image</th>
             <th>Products</th>
+            <th>Phone No</th>
             <th>Actions</th>
 
         </tr>
@@ -37,6 +38,7 @@
             <td>{{ $content->twitter }}</td>
             <td>{{ $content->product_img}}</td>
             <td>{{ $content->products }}</td>
+            <td>{{ $content->phone_no }}</td>
 
             <td><a class="btn btn-primary" href="{{ route('content.edit',['id'=>$content->id ]) }}"><i class="fa fa-edit"></i>Edit</a>
             <a class="btn btn-danger" href="{{ route('content.delete',['id'=>$content->id ]) }}" ><i class="fa fa-trash"></i>Delete</a></td>

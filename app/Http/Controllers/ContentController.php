@@ -33,6 +33,7 @@ class ContentController extends Controller
             'twitter' => 'nullable|url',
             'youtube' => 'nullable|url',
             'products' => 'nullable|string',
+            'phone_no' => 'nullable|int',
         ]);
 
         // Process image upload if present
@@ -51,7 +52,7 @@ class ContentController extends Controller
         $data['twitter'] = $request->input('twitter');
         $data['youtube'] = $request->input('youtube');
         $data['products'] = $request->input('products');
-
+        $data['phone_no'] = $request->input('phone_no');
         // Create a new Content model instance and save it
         Content::create($data);
 
@@ -80,7 +81,7 @@ class ContentController extends Controller
     $content->twitter = $request->input('twitter');
     $content->youtube = $request->input('youtube');
     $content->products = $request->input('products');
-
+    $content->phone_no = $request->input('phone_no');
     // Save changes to the content attributes
     $content->save();
 
