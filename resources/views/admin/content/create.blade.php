@@ -8,11 +8,16 @@
         @csrf
         <div class="form-group">
             <label for="heading">Heading</label>
-            <input required type="text" class="form-control " id="heading" name="heading" value="{{ $content->heading }}">
+            <input  type="text" class="form-control " id="heading" name="heading" value="{{ $content->heading }}" required>
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea required class="form-control" name="description" placeholder="">{{ $content->description ?? '' }}</textarea>
+            <textarea class="form-control" id="description" name="description" required>{{ $content->description ?? '' }}</textarea>
+
+        </div>
+        <div class="form-group">
+            <label for="phone_no">Phone Number:</label>
+            <input type="tel" class="form-control" id="phone_no" name="phone_no" value="{{ $content->phone_no ?? old('phone_no') }}" required>
         </div>
         <div class="form-group">
             <label for="facebook">Facebook</label>
@@ -32,15 +37,17 @@
         </div>
         <div class="form-group">
             <labelrequired for="product_img">Product Image</labelrequired>
-            <input type="file" class="form-control" id="product_img" name="product_img">
+            <input type="file" class="form-control" id="product_img" name="product_img" required>
             @if($content->product_img)
             <img src="{{ asset($content->product_img) }}" alt="Product Image" class="img-fluid mt-2" style="max-height: 200px;">
         @endif
         </div>
         <div class="form-group">
-            <label required for="products">Products</label>
-            <input class="form-control" id="products" name="products" value=" {{ old('products', $content->products) }} "></input>
+            <label  for="products">Products</label>
+            <input type="text" class="form-control" id="products" name="products" value="{{ $content->products }}" required>
+
         </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
