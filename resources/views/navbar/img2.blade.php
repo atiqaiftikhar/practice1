@@ -16,9 +16,12 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
         <link href="path/to/bootstrap.min.css" rel="stylesheet">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="path/to/jquery.min.js"></script>
         <script src="path/to/popper.min.js"></script>
         <script src="path/to/bootstrap.min.js"></script>
+        
 
 
       </head>
@@ -49,7 +52,7 @@
     .smartphone {
   position: relative;
   width: 360px;
-  height: 640px;
+  height: 720px;
   margin: auto;
   border: 16px black solid;
   border-top-width: 60px;
@@ -97,39 +100,88 @@
       background-image: url('{{ asset('assetsfront/img/header1.jpg') }}'); /* Replace 'your-image-url.jpg' with your actual image URL */
       background-size: cover;
       background-position: center;
-      height: 180px; 
+      height: 200px; 
     }
     .search-bar {
-  width: 30%; /* Adjust the width as needed */
-  height: 10px; /* Adjust the height as needed */
-  margin: 10px auto; /* Center the search bar */
-  padding: 5px; /* Add padding for better appearance */
-  font-size: 16px; /* Adjust font size */
+  width: 20%; 
+  height: 8px; 
+  /* margin: 8px auto;  */
+  padding: 3px; 
+  font-size: 12px; 
   border: 1px solid #ccc; /* Add a border */
-  border-radius: 5px; /* Add border radius */
+  border-radius: 3px; /* Add border radius */
+  margin-top: 5px; 
 }
 
 .dynamic-heading {
   font-size: 10px;
   color: #ffffff;
-  margin-top: 10px;
+  margin-top: 2px;
+  margin-bottom: 5px; 
 }
 
-/* Style for social media icons */
 .social-icons {
-  margin-top: 5px;
+  margin-top: 2px;
 }
 
-.social-icons a {
+/* .social-icons a {
   display: inline-block;
   margin-right: 10px;
   color: #ffffff;
   font-size: 30px;
+} */
+.social-icons a {
+  display: inline-block;
+  margin-right: 6px; /* Adjusted margin for spacing */
+  color: #ffffff;
+  font-size: 15px; /* Adjusted font size */
 }
+
 
 /* Additional styles for individual social media icons (you can customize as needed) */
 .social-icons a:hover {
-  color: #007bff; /* Change color on hover */
+  color: #d4dae0; /* Change color on hover */
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+  border-radius: 60%;
+  padding: 7px;
+
+
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+  border-radius: 50%;
+  padding: 5px;
+
+
+}
+
+.fa-instagram {
+  background: #88124d;
+  color: white;
+  border-radius: 50%;
+  padding: 5px;
+
+}
+.fa-barcode {
+  background:transparent;
+  color: white;
+ height: 50;
+ width: 70;
+  border-radius: 50%;
+  padding: 6px;
+
 }
 
 
@@ -146,28 +198,55 @@
       
         <div class="header-img">
             <div class="container">
-              <div class="row justify-content-center">
+              <div class="row justify-content-center align-items-center">
+                <div class="col-sm-2">
+                  <div class="social-icons">
+                 
+                    <i class="fa fa-barcode" aria-hidden="true"></i>
+
+                </div></div>
                 <div class="col-sm-8">
                   <form class="form-inline mt-3">
                     <input class="form-control mr-sm-1" class="search-bar" type="text" placeholder="Search Products..." aria-label="Search">
                     {{-- <button class="search-button" type="submit">Search</button> --}}
-                    <div class="dynamic-heading">
-                        <h6>Dolphin Supplier</h6>
-                        <p>Look Behind the Taste Because Colour of Life with Health </p>
-                      </div>
-                      <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        
-                      </div>
-                  
-                  </form>
+                  </form>    
+                </div>
+                <div class="col-sm-2">
                 </div>
               </div>
+            {{-- </div>
+          </div> --}}
+          <br>
+          <div class="row justify-content-center align-items-center">
+            <div class="col-sm-3 d-flex justify-content-center">
+          <img class="rounded" src={{ asset('assetsfront/img/supplier.png')}} height="60" width="60">
+          <br>
+           
+            </div>
+      
+            <div class="col-sm-7">
+            <div class="dynamic-heading">
+                <h5>Dolphin Supplier</h5>
+                <p>Look Behind the Taste Because Colour of Life with Health </p>
+              </div>
+              <div class="social-icons">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-youtube"></a>
+              </div>
+          </div>
+          <div class="col-sm-2 d-flex justify-content-center">
+            <div class="social-icons">
+              <a href="tel:+1234567890" class="fa fa-phone"></a>
             </div>
           </div>
-          <br>
+          </div>
+
+        </div>
+      </div>
+
+<br>
 
           <div id="demo" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
