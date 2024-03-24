@@ -245,19 +245,11 @@
                 <p>{{$content->description}} </p>
               </div>
               <div class="social-icons">
-                @if($content->facebook)
-                    <a href="{{ $content->facebook }}" class="fa fa-facebook"></a>
-                @endif
-                @if($content->twitter)
-                    <a href="{{ $content->twitter }}" class="fa fa-twitter"></a>
-                @endif
-                @if($content->instagram)
-                    <a href="{{ $content->instagram }}" class="fa fa-instagram"></a>
-                @endif
-                @if($content->youtube)
-                    <a href="{{ $content->youtube }}" class="fa fa-youtube"></a>
-                @endif
-            </div>
+                <a href="{{ $content->facebook }}" class="fa fa-facebook"></a>
+                <a href="{{ $content->twitter }}" class="fa fa-twitter"></a>
+                <a href="{{ $content->instagram }}" class="fa fa-instagram"></a>
+                <a href="{{ $content->youtube }}" class="fa fa-youtube"></a>
+              </div>
           </div>
           <div class="col-sm-2 d-flex justify-content-center">
             <div class="social-icons">
