@@ -66,7 +66,7 @@ class BannerController extends Controller
     }
     public function edit(Request $request,$id)
     {
-        
+
         $banner = Banner::find($id);
         return view('admin.banner.create',compact('banner'));
     }
@@ -79,13 +79,13 @@ class BannerController extends Controller
         $banner->update($request->all());
 
         return redirect()->route('banner.index')
-            ->with('success', 'User updated successfully.');
+            ->with('success', 'banner updated successfully.');
     }
 
 
     public function delete($id)
     {
-       
+
     $banner=Banner::find($id);
     $banner->delete();
     return redirect()->route('banner.index');

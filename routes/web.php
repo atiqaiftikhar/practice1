@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\ContentController;
 use App\Http\Controllers\FirstController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -31,7 +32,17 @@ Route::get('/admin',[HomeController::class,'admin']);
         Route::get('/edit/{id}', [BannerController::class,'edit'])->name('banner.edit');
         Route::post('/update/{id}', [BannerController::class,'update'])->name('banner.update');
         Route::get('/delete/{id}', [BannerController::class,'delete'])->name('banner.delete');
-    
+
    });
+   Route::group(['prefix'=>'/content'], function(){
+
+    Route::get('/',[ContentController::class,'index'])->name('content.index');
+    Route::get('/create',[ContentController::class,'create'])->name('content.create');
+    Route::post('/store',[ContentController::class,'store'])->name('content.store');
+    Route::get('/edit/{id}', [ContentController::class,'edit'])->name('content.edit');
+    Route::post('/update/{id}', [ContentController::class,'update'])->name('content.update');
+    Route::get('/delete/{id}', [ContentController::class,'delete'])->name('content.delete');
+
+});
 
 });

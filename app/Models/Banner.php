@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Banner extends Model
 {
+    use HasFactory;
     protected $fillable = ['id', 'image', 'rank', 'expiry_date','url'];
-    
+
 }
