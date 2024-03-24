@@ -21,7 +21,7 @@
         <script src="path/to/jquery.min.js"></script>
         <script src="path/to/popper.min.js"></script>
         <script src="path/to/bootstrap.min.js"></script>
-        
+
 
 
       </head>
@@ -42,7 +42,7 @@
   background-position: center;
   height: 100%;
   width: 100%;
-  padding-top: 60px; 
+  padding-top: 60px;
 
 }
 .jumbotron {
@@ -89,35 +89,35 @@
 
 
 .smartphone .content {
-  width: 100%; 
+  width: 100%;
   max-width: 360px;
-  height: auto; 
+  height: auto;
   background: white;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .header-img {
       background-image: url('{{ asset('assetsfront/img/header1.jpg') }}'); /* Replace 'your-image-url.jpg' with your actual image URL */
       background-size: cover;
       background-position: center;
-      height: 200px; 
+      height: 200px;
     }
     .search-bar {
-  width: 20%; 
-  height: 8px; 
+  width: 20%;
+  height: 8px;
   /* margin: 8px auto;  */
-  padding: 3px; 
-  font-size: 12px; 
+  padding: 3px;
+  font-size: 12px;
   border: 1px solid #ccc; /* Add a border */
   border-radius: 3px; /* Add border radius */
-  margin-top: 5px; 
+  margin-top: 5px;
 }
 
 .dynamic-heading {
   font-size: 10px;
   color: #ffffff;
   margin-top: 2px;
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
 }
 
 .social-icons {
@@ -191,17 +191,18 @@
 
       <body>
 
-
+        {{-- @foreach ($content as $content) --}}
+        @if ($content)
 
 <div class="smartphone">
     <div class="content">
-      
+
         <div class="header-img">
             <div class="container">
               <div class="row justify-content-center align-items-center">
                 <div class="col-sm-2">
                   <div class="social-icons">
-                 
+
                     <i class="fa fa-barcode" aria-hidden="true"></i>
 
                 </div></div>
@@ -209,7 +210,7 @@
                   <form class="form-inline mt-3">
                     <input class="form-control mr-sm-1" class="search-bar" type="text" placeholder="Search Products..." aria-label="Search">
                     {{-- <button class="search-button" type="submit">Search</button> --}}
-                  </form>    
+                  </form>
                 </div>
                 <div class="col-sm-2">
                 </div>
@@ -219,21 +220,22 @@
           <br>
           <div class="row justify-content-center align-items-center">
             <div class="col-sm-3 d-flex justify-content-center">
-          <img class="rounded" src={{ asset('assetsfront/img/supplier.png')}} height="60" width="60">
+          <img class="rounded" src="{{asset($content->product_img)}}" height="60" width="60">
           <br>
-           
+
             </div>
-      
+
             <div class="col-sm-7">
             <div class="dynamic-heading">
-                <h5>Dolphin Supplier</h5>
-                <p>Look Behind the Taste Because Colour of Life with Health </p>
+                {{-- <h5>Dolphin Supplier</h5> --}}
+                <h5>{{$content->heading}}</h5>
+                <p>{{$content->description}} </p>
               </div>
               <div class="social-icons">
-                <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-twitter"></a>
-                <a href="#" class="fa fa-instagram"></a>
-                <a href="#" class="fa fa-youtube"></a>
+                <a href="{{ $content->facebook }}" class="fa fa-facebook"></a>
+                <a href="{{ $content->twitter }}" class="fa fa-twitter"></a>
+                <a href="{{ $content->instagram }}" class="fa fa-instagram"></a>
+                <a href="{{ $content->youtube }}" class="fa fa-youtube"></a>
               </div>
           </div>
           <div class="col-sm-2 d-flex justify-content-center">
@@ -245,7 +247,10 @@
 
         </div>
       </div>
-
+{{-- @endforeach --}}
+@else
+<p>No content available</p>
+@endif
 <br>
 
           <div id="demo" class="carousel slide" data-bs-ride="carousel">
@@ -255,7 +260,7 @@
               <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
               <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
             </div>
-        
+
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img src="{{asset('assetsfront/img/s1.png')}}" alt="" class="d-block w-100">
@@ -270,7 +275,7 @@
                 <img src="{{asset('assetsfront/img/s4.png')}}" alt="" class="d-block w-100">
               </div>
             </div>
-        
+
             <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
               <span class="carousel-control-prev-icon"></span>
             </button>

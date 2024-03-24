@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Banner;
+use App\Models\Content;
+
 // use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -28,7 +30,8 @@ class HomeController extends Controller
         return view('navbar.img1');
     }
     public function img2(){
-        return view('navbar.img2');
+        $content = Content::first();
+        return view('navbar.img2',compact('content'));
     }
     public function img3(){
         return view('navbar.img3');

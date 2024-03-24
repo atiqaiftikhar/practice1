@@ -58,7 +58,28 @@ class ContentController extends Controller
     {
 
         $content = Content::find($id);
-        $content->update($request->all());
+
+    // Update content attributes
+    $content->heading = $request->input('heading');
+    $content->description = $request->input('description');
+    $content->facebook = $request->input('facebook');
+    $content->instagram = $request->input('instagram');
+    $content->twitter = $request->input('twitter');
+    $content->youtube = $request->input('youtube');
+    $content->products = $request->input('products');
+
+    // Save changes to the content attributes
+    $content->save();
+
+    // Check if a new image file is uploaded
+    if ($image = $request->file('product_img')) {
+        $destination = 'public/assetsfront/img/';
+        $image_name = time() . '_image.' . $image->getClientOriginalExtension();
+        $image->move(public_path($destination), $image_name);
+        $content->product_img = '/' . $destination . $image_name;
+        $content->save(); // Save the updated content with the new image path
+    }
+
 
         return redirect()->route('content.index')
             ->with('success', 'content updated successfully.');

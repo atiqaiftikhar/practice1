@@ -1,5 +1,6 @@
 @extends('layouts.masterback')
 @section('content')
+@include('alert')
 <br>
 
     <div class="container">

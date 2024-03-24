@@ -1,12 +1,13 @@
 @extends('layouts.masterback')
 @section('content')
+@include('alert')
 <br><br><br>
 
-    <div class="container"> 
+    <div class="container">
         <div class="text-end mb-4">
             <div>
                 <a class="btn btn-success " href="{{ route('banner.create') }}">Create</a>
-            </div></div> 
+            </div></div>
 <table class="table table-stripped">
     <thead class="table-dark">
         <tr>
@@ -31,8 +32,8 @@
             <a class="btn btn-danger" href="{{ route('banner.delete',['id'=>$banner->id ]) }}" ><i class="fa fa-trash"></i>Delete</a></td>
         </tr>
         @endforeach
-        
-        
+
+
     </tbody>
 </table>
 </div>
