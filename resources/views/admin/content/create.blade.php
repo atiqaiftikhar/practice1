@@ -35,13 +35,21 @@
             <label for="youtube">YouTube</label>
             <input type="text" class="form-control" id="youtube" name="youtube" value="{{ $content->youtube}}">
         </div>
-        <div class="form-group">
+        {{-- <div class="form-group">
             <labelrequired for="product_img">Product Image</labelrequired>
             <input type="file" class="form-control" id="product_img" name="product_img" required>
             @if($content->product_img)
             <img src="{{ asset($content->product_img) }}" alt="Product Image" class="img-fluid mt-2" style="max-height: 200px;">
         @endif
-        </div>
+        </div> --}}
+        @if($content->product_img)
+    <img src="{{ asset($content->product_img) }}" alt="Product Image" class="img-fluid mt-2" style="max-height: 200px;">
+@endif
+
+<div class="form-group">
+    <label for="product_img">Product Image</label>
+    <input type="file" class="form-control" id="product_img" name="product_img">
+</div>
         <div class="form-group">
             <label  for="products">Products</label>
             <input type="text" class="form-control" id="products" name="products" value="{{ $content->products }}" required>
